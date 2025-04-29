@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Button Server Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ESP32 Button Server Control</h1>
+            <p class="subtitle">Remote control panel for your ESP32 device</p>
+        </header>
+        
+        <div class="esp-setup-panel">
+            <h2>Device Setup</h2>
+            <div class="input-group">
+                <label for="ipAddress">ESP32 IP Address:</label>
+                <input type="text" id="ipAddress" placeholder="e.g., 192.168.1.100">
+                <button id="connect" class="btn primary">Connect</button>
+                <span id="connection-status">Disconnected</span>
+            </div>
+            <p class="helper-text">Enter the IP address shown on your ESP32's serial monitor</p>
+        </div>
+        
+        <div id="control-panel" class="hidden">
+            <div class="status-card">
+                <h2>Server Status</h2>
+                <div class="status-indicator">
+                    <span id="status-dot"></span>
+                    <span id="status-text">Unknown</span>
+                </div>
+                <div class="status-details">
+                    <p>Uptime: <span id="uptime">0</span> seconds</p>
+                    <p>Last updated: <span id="last-updated">Never</span></p>
+                </div>
+            </div>
+            
+            <div class="action-panel">
+                <h2>Server Control</h2>
+                <button id="start-server" class="btn success">Start Server</button>
+                <div id="event-log">
+                    <h3>Event Log</h3>
+                    <div id="events"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Power on your ESP32 device and note its IP address from the serial monitor</li>
+                <li>Enter the IP address above and click "Connect"</li>
+                <li>If the server is not running, press the "Start Server" button (or the physical button on the ESP32)</li>
+                <li>View live status updates and events from your device</li>
+            </ol>
+        </div>
+        
+        <footer>
+            <p>ESP32 Button Server Control | <a href="https://github.com/YOUR-USERNAME/ESP32ButtonServer" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html> 
